@@ -12,6 +12,19 @@ body {
 
 ul {
 	list-style-type: none;
+	li {
+		a {
+			text-decoration: none;
+			color: black;
+		}
+		button {
+			border: none;
+			outline: 1px solid var(--primary-color);
+			color: var(--primary-color);
+			padding: 0.5rem 1rem;
+			background: none;
+		}
+	}
 }
 
 .App {

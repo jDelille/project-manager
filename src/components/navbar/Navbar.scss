@@ -1,0 +1,21 @@
+.navbar {
+	display: flex;
+	align-items: center;
+	margin-top: 40px;
+	ul {
+		display: flex;
+		width: 100%;
+		align-items: center;
+		height: 100%;
+		.logo {
+			font-size: 1.3rem;
+			text-transform: uppercase;
+		}
+		.auth-links {
+			margin-left: auto;
+			display: flex;
+			gap: 1rem;
+			align-items: center;
+		}
+	}
+}
