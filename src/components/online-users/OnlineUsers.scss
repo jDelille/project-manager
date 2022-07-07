@@ -5,6 +5,10 @@
 	box-sizing: border-box;
 	background-color: #fbfbfb;
 	color: var(--heading-color);
+	min-height: 100vh;
+	position: fixed;
+	right: 0;
+	top: 65px;
 	h2 {
 		text-align: right;
 		margin-bottom: 40px;

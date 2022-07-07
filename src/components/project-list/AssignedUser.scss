@@ -1,0 +1,15 @@
+li {
+	list-style-type: none;
+}
+
+.assigned-user-item {
+	position: relative;
+	.assigned-user-name {
+		position: absolute;
+		background-color: #181818;
+		color: white;
+		bottom: -2.25rem;
+		padding: 0.25rem;
+		border-radius: 5px;
+	}
+}

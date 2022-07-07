@@ -1,10 +1,13 @@
-.sidebar {
+.sidebar,
+.shrink-sidebar {
 	background-color: var(--primary-color);
 	min-height: 100vh;
-	width: 300px;
-	min-width: 300px;
+	width: 280px;
+	min-width: 280px;
 	position: relative;
 	color: #fff;
+	transition: all 100ms ease-in-out;
+
 	.sidebar-content {
 		position: fixed;
 		width: inherit;
@@ -13,8 +16,16 @@
 		font-weight: bold;
 		text-align: center;
 		letter-spacing: 1px;
-		padding: 40px 30px;
+		height: 65px;
+		padding: 0px 30px;
 		border-bottom: 1px solid lightgray;
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		justify-content: center;
+		.user-name {
+			font-weight: lighter;
+		}
 	}
 	.links {
 		margin-top: 80px;
@@ -22,6 +33,16 @@
 		ul {
 			li {
 				margin-top: 10px;
+				span {
+					display: flex;
+					align-items: center;
+					gap: 0.5rem;
+					cursor: pointer;
+					.icon {
+						font-size: 1.3rem;
+						cursor: pointer;
+					}
+				}
 			}
 			a {
 				display: flex;
@@ -29,8 +50,33 @@
 				text-decoration: none;
 				color: #fff;
 				width: 100%;
-    
+			}
+			a.active {
+				color: var(--primary-color);
+				background-color: var(--bg-color);
+				border-radius: 20px 0 0 20px;
 			}
 		}
+	}
+	.expand {
+		margin-left: 20px;
+		padding: 10px;
+		.icon {
+			cursor: pointer;
+		}
+	}
+}
+
+.shrink-sidebar {
+	width: 85px;
+	min-width: 85px;
+	transition: all 100ms ease-in-out;
+	.user-shrink {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0px 5px;
+		height: 65px;
+		border-bottom: 1px solid lightgray;
 	}
 }
