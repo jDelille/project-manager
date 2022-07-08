@@ -16,7 +16,6 @@ ul {
 	li {
 		a {
 			text-decoration: none;
-			color: black;
 		}
 		button {
 			border: none;
@@ -61,12 +60,15 @@ textarea {
 
 .App {
 	display: flex;
+	height: auto;
+
 	.container {
 		flex-grow: 1;
+
 		.page-content {
-			margin-top: 2.5rem;
 			padding: 0 2rem;
-			width: calc(100% - 250px);
+			width: 100%;
+			height: auto;
 		}
 	}
 }

@@ -1,35 +1,54 @@
+@import '../../styles/mixins.scss';
+
 .sidebar,
 .shrink-sidebar {
-	background-color: var(--primary-color);
 	min-height: 100vh;
 	width: 280px;
 	min-width: 280px;
 	position: relative;
-	color: #fff;
 	transition: all 100ms ease-in-out;
-
+	border-right: 1px solid lightgray;
+	@include phone() {
+		display: none;
+	}
+	.hide {
+		opacity: 0;
+		transition: all 100ms ease-in-out;
+	}
 	.sidebar-content {
 		position: fixed;
 		width: inherit;
 	}
 	.user {
 		font-weight: bold;
-		text-align: center;
-		letter-spacing: 1px;
-		height: 65px;
-		padding: 0px 30px;
-		border-bottom: 1px solid lightgray;
+		height: 50px;
 		display: flex;
+		border-right: 1px solid lightgray;
+		padding: 10px;
+		gap: 0.5rem;
 		align-items: center;
-		gap: 1rem;
-		justify-content: center;
-		.user-name {
-			font-weight: lighter;
+		background-color: var(--heading-color);
+		color: white;
+
+		img {
+			max-width: 25px;
+			max-height: 25px;
+		}
+		.user-info {
+			.user-name,
+			.user-email {
+				font-weight: lighter;
+				transition: all 200ms ease-in-out;
+				opacity: 1;
+				font-size: 0.7rem;
+			}
+			.user-email {
+				font-size: 0.6rem;
+			}
 		}
 	}
 	.links {
-		margin-top: 80px;
-		margin-left: 20px;
+		border-bottom: 1px solid lightgray;
 		ul {
 			li {
 				margin-top: 10px;
@@ -48,13 +67,17 @@
 				display: flex;
 				padding: 10px;
 				text-decoration: none;
-				color: #fff;
 				width: 100%;
+				border-right: 1px solid lightgray;
+
+				&:hover {
+					border-right: 1px solid lightgray;
+				}
 			}
 			a.active {
-				color: var(--primary-color);
-				background-color: var(--bg-color);
-				border-radius: 20px 0 0 20px;
+				background-color: #e5f4ff;
+				border-right: 1px solid lightgray;
+				color: black;
 			}
 		}
 	}
@@ -71,6 +94,10 @@
 	width: 85px;
 	min-width: 85px;
 	transition: all 100ms ease-in-out;
+	img {
+		max-width: 25px;
+		max-height: 25px;
+	}
 	.user-shrink {
 		display: flex;
 		align-items: center;
@@ -78,5 +105,8 @@
 		padding: 0px 5px;
 		height: 65px;
 		border-bottom: 1px solid lightgray;
+		.avatar {
+			position: absolute;
+		}
 	}
 }

@@ -1,12 +1,16 @@
+@import '../../styles/mixins.scss';
+
 .navbar {
 	display: flex;
 	align-items: center;
-	height: 65px;
-	background-color: #1a73e8;
+	height: 50px;
+	background-color: var(--heading-color);
 	color: white;
-	padding: 0 2rem;
 	position: sticky;
 	top: 0;
+	z-index: 9999;
+	padding: 0 0.3rem;
+	padding-left: 2rem;
 	ul {
 		display: flex;
 		width: 100%;
@@ -15,12 +19,144 @@
 		.logo {
 			font-size: 1.3rem;
 			text-transform: uppercase;
+			a {
+				background: none;
+				color: white;
+			}
 		}
 		.auth-links {
 			margin-left: auto;
 			display: flex;
 			gap: 1rem;
 			align-items: center;
+		}
+		.user-controls {
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+			height: 50px;
+			padding: 0 1rem;
+			&:hover {
+				cursor: pointer;
+				background-color: #111111;
+				.icon {
+					transform: translate(0, 3px);
+					transition: all 200ms ease-in-out;
+				}
+			}
+			.avatar {
+				width: 30px;
+				height: 30px;
+				border: 2px solid lightgray;
+			}
+			.icon {
+				font-size: 0.6rem;
+				font-weight: bold;
+				transition: all 200ms ease-in-out;
+				color: white;
+			}
+		}
+		.settings {
+			background-color: #181818;
+			position: absolute;
+			top: 55px;
+			width: 230px;
+			height: 134px;
+			right: 0.3rem;
+			z-index: 9999;
+			padding: 0.5rem 0;
+			display: flex;
+			flex-direction: column;
+			gap: 0.5rem;
+			border-radius: 4px;
+			box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+			@include phone() {
+				height: 214px;
+				right: 1rem;
+			}
+			.settings-header {
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+				.left-icon {
+					width: 50px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					.avatar {
+						width: 30px;
+						height: 30px;
+						border: 2px solid lightgray;
+					}
+				}
+
+				.user-email {
+					font-size: 0.8rem;
+				}
+			}
+			.setting-links {
+				.option {
+					display: flex;
+					align-items: center;
+					gap: 0.5rem;
+					height: 40px;
+					font-size: 0.8rem;
+					cursor: pointer;
+					&:hover {
+						background-color: #0d99ff;
+						color: white;
+					}
+					a {
+						background: none;
+						color: white;
+					}
+					.left-icon {
+						width: 50px;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						.icon {
+							color: white;
+							font-size: 1rem;
+						}
+					}
+				}
+				.mobile-option {
+					display: none;
+					@include phone() {
+						display: flex;
+					}
+				}
+			}
+			.logout {
+				position: absolute;
+				bottom: 0.5rem;
+				height: 40px;
+				display: flex;
+				gap: 0.5rem;
+				align-items: center;
+				font-size: 0.8rem;
+				border-top: 1px solid lightgray;
+				width: 230px;
+				@include phone() {
+					width: 280px;
+				}
+				cursor: pointer;
+				&:hover {
+					background-color: #0d99ff;
+					color: white;
+				}
+				.left-icon {
+					width: 50px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					.icon {
+						color: white;
+						font-size: 1rem;
+					}
+				}
+			}
 		}
 		.logout-btn {
 			color: white;

@@ -1,36 +1,41 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useLogout } from '../../hooks/useLogout';
+import React, { useState } from 'react';
 import { useAuthContext } from '../../hooks/useAuthContext';
+import { BsChevronDown } from 'react-icons/bs';
 import './Navbar.scss';
+import Avatar from '../avatar/Avatar';
+import Settings from './Settings';
+import { Link } from 'react-router-dom';
 
-const Navbar = () => {
-	const { logout, isPending } = useLogout();
+const Navbar = ({ theme, setTheme }) => {
 	const { user } = useAuthContext();
+
+	const [showSettings, setShowSettings] = useState(false);
 
 	return (
 		<nav className='navbar'>
 			<ul>
 				<li className='logo'>
-					<span> Deli </span>
+					<Link exact to='/'>
+						Code Deli
+					</Link>
 				</li>
 				<li className='auth-links'>
-					{!user && (
-						<>
-							<Link to='/login'> Login </Link>
-							<Link to='/signup'> Signup </Link>
-						</>
+					{user && (
+						<div
+							className='user-controls'
+							onClick={() => setShowSettings(!showSettings)}>
+							<Avatar src={user?.photoURL} />
+							<BsChevronDown className='icon' />
+						</div>
 					)}
 
-					{!isPending && user && (
-						<button className='logout-btn' onClick={logout}>
-							Logout
-						</button>
-					)}
-					{isPending && user && (
-						<button className='logout-btn' disabled>
-							Logging out...
-						</button>
+					{showSettings && (
+						<Settings
+							user={user}
+							theme={theme}
+							setTheme={setTheme}
+							setShowSettings={setShowSettings}
+						/>
 					)}
 				</li>
 			</ul>

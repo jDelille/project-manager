@@ -1,10 +1,18 @@
 .auth-form {
-	max-width: 360px;
+	max-width: 380px;
 	margin: 60px auto;
 	padding: 40px;
 	border: 1px solid #ddd;
 	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);
 	background-color: #fff;
+	.error {
+		background-color: #f8d7da;
+		color: #721c24;
+		padding: 0.5rem;
+		border-radius: 4px;
+		font-size: 0.8rem;
+		margin: 10px 0;
+	}
 	label {
 		display: flex;
 		flex-direction: column;
@@ -14,6 +22,7 @@
 		input {
 			height: 40px;
 			padding-left: 5px;
+			background-color: #fff;
 		}
 		.profile-pic-input {
 			border: none;

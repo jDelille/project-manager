@@ -1,0 +1,17 @@
+@mixin phone {
+	@media only screen and (max-width: 856px) {
+		@content;
+	}
+}
+
+@mixin laptop {
+	@media only screen and (max-width: 1600px) {
+		@content;
+	}
+}
+
+@mixin macbook {
+	@media only screen and (max-width: 1280px) {
+		@content;
+	}
+}

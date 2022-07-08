@@ -1,12 +1,20 @@
+@import '../../styles/mixins.scss';
+
 .project-details {
 	display: grid;
 	grid-template-columns: 2fr 2fr;
 	align-items: start;
 	grid-gap: 60px;
+	margin-top: 20px;
+	@include phone() {
+		display: flex;
+		flex-direction: column;
+		padding-bottom: 3rem;
+	}
 	.project-summary {
-		background-color: #fff;
 		padding: 30px;
 		border-radius: 4px;
+
 		.due-date {
 			margin: 10px 0;
 			font-size: 0.9rem;
@@ -37,6 +45,9 @@
 .project-comments {
 	display: flex;
 	flex-direction: column;
+	@include phone() {
+		width: 100%;
+	}
 	label {
 		display: flex;
 		flex-direction: column;
@@ -49,7 +60,6 @@
 		}
 	}
 	h4 {
-		color: var(--heading-color);
 		padding-bottom: 20px;
 	}
 	li {
@@ -58,7 +68,6 @@
 		border: 1px solid #f2f2f2;
 		margin-top: 20px;
 		box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.05);
-		background-color: #fff;
 		margin-bottom: 20px;
 		.comment-author {
 			display: flex;

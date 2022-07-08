@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useSignup } from '../../hooks/useSignup';
+import { Link } from 'react-router-dom';
 import './Signup.scss';
 
 export default function Signup() {
@@ -43,8 +44,10 @@ export default function Signup() {
 	return (
 		<form className='auth-form' onSubmit={handleSubmit}>
 			<h2> Sign up</h2>
+			{error && <div className='error'>{error}</div>}
+
 			<label>
-				<span>email:</span>
+				<span>Email:</span>
 				<input
 					required
 					type='email'
@@ -53,7 +56,7 @@ export default function Signup() {
 				/>
 			</label>
 			<label>
-				<span>password:</span>
+				<span>Password:</span>
 				<input
 					required
 					type='password'
@@ -62,7 +65,7 @@ export default function Signup() {
 				/>
 			</label>
 			<label>
-				<span>display name:</span>
+				<span>Display name:</span>
 				<input
 					required
 					type='text'
@@ -71,7 +74,7 @@ export default function Signup() {
 				/>
 			</label>
 			<label>
-				<span>profile picture:</span>
+				<span>Profile picture:</span>
 				<input
 					required
 					type='file'
@@ -86,7 +89,9 @@ export default function Signup() {
 					Loading
 				</button>
 			)}
-			{error && <div className='error'>{error}</div>}
+			<p className='redirect-link'>
+				Already have an account? <Link to='/login'> Sign in now </Link>
+			</p>
 		</form>
 	);
 }

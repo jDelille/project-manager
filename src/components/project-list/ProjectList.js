@@ -12,8 +12,11 @@ const ProjectList = ({ projects }) => {
 					to={`/projects/${project.id}`}
 					key={project.id}
 					className='project-box'>
-					<h4>{project.name}</h4>
-					<p>Due by {project.dueDate.toDate().toDateString()}</p>
+					<div className='project-header'>
+						<h4>{project.name}</h4>
+						<p>Due by {project.dueDate.toDate().toDateString()}</p>
+					</div>
+
 					<div className='assigned-to'>
 						<p> Assigned to: </p>
 						<ul>
