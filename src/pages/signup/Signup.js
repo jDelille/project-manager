@@ -8,12 +8,13 @@ export default function Signup() {
 	const [password, setPassword] = useState('');
 	const [displayName, setDisplayName] = useState('');
 	const [thumbnail, setThumbnail] = useState(null);
+	const [friend, setFriend] = useState([]);
 	const [thumbnailError, setThumbnailError] = useState(null);
 	const { signup, isPending, error } = useSignup();
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		signup(email, password, displayName, thumbnail);
+		signup(email, password, displayName, thumbnail, friend);
 	};
 
 	// thumbnail check

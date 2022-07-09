@@ -34,6 +34,14 @@ const Settings = ({ user, theme, setTheme, setShowSettings }) => {
 						New Project
 					</Link>
 				</div>
+				<div className='option mobile-option'>
+					<div className='left-icon'>
+						<MdAdd className='icon' />
+					</div>
+					<Link to='/create' onClick={() => setShowSettings(false)}>
+						Add Friend
+					</Link>
+				</div>
 				<div className='option'>
 					<div className='left-icon'>
 						<CgDarkMode className='icon' />

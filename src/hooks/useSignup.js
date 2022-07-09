@@ -40,6 +40,7 @@ export const useSignup = () => {
 				online: true,
 				displayName,
 				photoURL: imgURL,
+				friends: [],
 			});
 
 			// dispatch login action

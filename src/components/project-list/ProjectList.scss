@@ -1,9 +1,13 @@
 @import '../../styles/mixins.scss';
 .project-list {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-	gap: 1.5rem;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 0fr));
 	margin-top: 40px;
+	gap: 1rem;
+	@include phone() {
+		display: flex;
+		flex-direction: column;
+	}
 	a {
 		background-color: #fff;
 		width: 310px;
@@ -14,7 +18,7 @@
 		text-decoration: none;
 		position: relative;
 		@include phone() {
-			width: 100%;
+			width: 97%;
 		}
 		.icon {
 			position: absolute;
