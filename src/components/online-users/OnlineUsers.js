@@ -13,14 +13,14 @@ const OnlineUsers = () => {
 			</div>
 
 			{error && <div className='error'>{error}</div>}
-			{documents &&
+			{/* {documents &&
 				documents.map((user) => (
 					<div key={user.id} className='user-list-item'>
 						<Avatar src={user.photoURL} />
 						<span>{user.displayName}</span>
 						{user.online && <span className='online-user'></span>}
 					</div>
-				))}
+				))} */}
 		</div>
 	);
 };

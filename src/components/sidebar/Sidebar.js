@@ -6,6 +6,7 @@ import { AiOutlineRight, AiOutlineLeft } from 'react-icons/ai';
 import './Sidebar.scss';
 import { useState } from 'react';
 import OnlineUsers from '../online-users/OnlineUsers';
+import OnlineFriends from '../online-users/OnlineFriends';
 
 const Sidebar = () => {
 	const { user } = useAuthContext();
@@ -44,7 +45,7 @@ const Sidebar = () => {
 						</li>
 					</ul>
 				</nav>
-				{user && <OnlineUsers expandSidebar={expandSidebar} />}
+				<OnlineFriends />
 				<div className='expand'>
 					{expandSidebar ? (
 						<AiOutlineLeft

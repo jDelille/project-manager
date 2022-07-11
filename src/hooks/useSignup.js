@@ -41,6 +41,7 @@ export const useSignup = () => {
 				displayName,
 				photoURL: imgURL,
 				friends: [],
+				email,
 			});
 
 			// dispatch login action

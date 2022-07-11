@@ -2,6 +2,7 @@ import Avatar from '../avatar/Avatar';
 import { useLogout } from '../../hooks/useLogout';
 import { MdSpaceDashboard, MdAdd } from 'react-icons/md';
 import { RiLogoutBoxRLine } from 'react-icons/ri';
+import { AiOutlineUserAdd } from 'react-icons/ai';
 import { CgDarkMode } from 'react-icons/cg';
 import './Navbar.scss';
 import { Link } from 'react-router-dom';
@@ -13,9 +14,9 @@ const Settings = ({ user, theme, setTheme, setShowSettings }) => {
 		<div className='settings'>
 			<div className='settings-header'>
 				<div className='left-icon'>
-					<Avatar src={user.photoURL} />
+					<Avatar src={user?.photoURL} />
 				</div>
-				<p className='user-email'>{user.email}</p>
+				<p className='user-email'>{user?.email}</p>
 			</div>
 			<div className='setting-links'>
 				<div className='option mobile-option'>
@@ -36,11 +37,9 @@ const Settings = ({ user, theme, setTheme, setShowSettings }) => {
 				</div>
 				<div className='option mobile-option'>
 					<div className='left-icon'>
-						<MdAdd className='icon' />
+						<AiOutlineUserAdd className='icon' />
 					</div>
-					<Link to='/create' onClick={() => setShowSettings(false)}>
-						Add Friend
-					</Link>
+					<p onClick={() => setShowSettings(false)}>Add Friend</p>
 				</div>
 				<div className='option'>
 					<div className='left-icon'>
